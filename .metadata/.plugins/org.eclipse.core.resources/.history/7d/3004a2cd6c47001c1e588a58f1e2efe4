@@ -1,0 +1,22 @@
+package com.xoriant.bank.model;
+
+public class AccountDetails {
+
+	private int accountNumber;
+	
+	private double balance;
+	
+	private int customerId;
+	
+	private Branch branch;
+	
+	private String accountType;
+	
+	private Customer customer;
+
+	public AccountDetails() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+}

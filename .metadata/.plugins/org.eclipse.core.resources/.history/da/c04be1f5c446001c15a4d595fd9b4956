@@ -1,0 +1,8 @@
+package com.xoriant.bank.service;
+
+import com.xoriant.bank.model.util.CustomerDTO;
+
+public interface TransactionService {
+
+	public double withdrawMoney(CustomerDTO customerDTO);
+}

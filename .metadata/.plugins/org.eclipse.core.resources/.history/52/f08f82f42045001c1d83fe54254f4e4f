@@ -1,0 +1,22 @@
+package CheckedException;
+
+public class CheckedExceptionPropagation extends Exception{
+
+	void m1() {
+		int a= 10/0;
+	}
+	void m2() throws ArithmeticException {
+		m1();
+	}
+	void m3() throws Exception{
+		m2();
+	}
+	public static void main(String args[]) throws Exception {
+		CheckedExceptionPropagation e1=new CheckedExceptionPropagation();
+		try {
+			e1.m3();
+		}catch(ArithmeticException e) {
+			e.printStackTrace();
+		}
+	}
+}

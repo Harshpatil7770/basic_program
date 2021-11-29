@@ -1,0 +1,6 @@
+package com.xoriant.bank.dao.util;
+
+public class CommonMethod {
+
+	public static final String ADD_NEW_BRANCH="insert into branch values(?,?,?,?,?)";
+}

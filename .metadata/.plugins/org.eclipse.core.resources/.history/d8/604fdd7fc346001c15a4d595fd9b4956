@@ -1,0 +1,6 @@
+package com.xoriant.bank.model.util;
+
+public class DBquries {
+
+	public static final String WITHDRAWAL_MONEY="insert into transaction_deatils values(?,?,?,?,?,?,?)";
+}

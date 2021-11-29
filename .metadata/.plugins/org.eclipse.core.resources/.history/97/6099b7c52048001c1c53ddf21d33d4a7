@@ -1,0 +1,11 @@
+package com.xoriant.bank.dao.util;
+
+public class DBquries {
+
+	public static final String ADD_NEW_BRANCH="insert into branch values(?,?,?,?,?)";
+	
+	public static final String ADD_NEW_PERSON="insert into personInfo values(?,?,?,?,?,?,?,?)";
+	
+	public static final String ADD_NEW_ADDRESS="insert into address values(?,?,?,?,?,?,?,?,?)";
+	
+}

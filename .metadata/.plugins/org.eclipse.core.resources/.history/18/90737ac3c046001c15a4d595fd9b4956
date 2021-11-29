@@ -1,0 +1,21 @@
+package com.xoriant.bank.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class TransactionDaoImpl implements TransactionDao{
+
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	
+	
+	@Override
+	public double withdrawMoney(int accountNumber) {
+		// TODO Auto-generated method stub
+		return ;
+	}
+
+}

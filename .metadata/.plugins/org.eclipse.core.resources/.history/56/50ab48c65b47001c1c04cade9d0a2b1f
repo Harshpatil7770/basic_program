@@ -1,0 +1,6 @@
+package com.xoriant.bank.dao.util;
+
+public class DBquries {
+
+	public static final String EDIT_ADDRESS="select door_no,city,area,state,pincode,addressType,branch_id from address a inner join branch b on a.branch_id=b.branch_id inner join personinfo p a.person_id=p.person_id where customer_id=?";
+}

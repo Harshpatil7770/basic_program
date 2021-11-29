@@ -1,0 +1,5 @@
+package com.xoriant.bank.resource;
+
+public class TransactionResource {
+
+}

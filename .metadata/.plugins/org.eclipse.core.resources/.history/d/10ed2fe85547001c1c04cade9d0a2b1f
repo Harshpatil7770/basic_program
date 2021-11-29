@@ -1,0 +1,8 @@
+package com.xoriant.bank.dao;
+
+import com.xoriant.bank.model.Address;
+
+public interface CustomerDao {
+
+	public Address editAddress();
+}

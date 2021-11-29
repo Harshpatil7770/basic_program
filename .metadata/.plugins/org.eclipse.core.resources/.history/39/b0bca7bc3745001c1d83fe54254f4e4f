@@ -1,0 +1,23 @@
+package palindromnumber;
+
+import java.util.Scanner;
+
+public class PalindromNum {
+
+	public static void main(String args[]) {
+	int num,rem,rev=0;
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the number::");
+	num=sc.nextInt();
+	if(num!=0) {
+		rem=num/10;
+		rev=rev+rem*10;
+		num=num%10;	
+	}
+	if(rev==num) {
+		System.out.println("Palindrom number");
+	}else {
+		System.out.println("Not palindrom number");
+	}
+}
+}

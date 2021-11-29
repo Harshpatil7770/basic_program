@@ -1,0 +1,10 @@
+package com.xoriant.bank.dao;
+
+import com.xoriant.bank.model.util.CustomerDTO;
+
+public interface TransactionDao {
+
+	public String withdrawMoney(CustomerDTO customerDTO);
+	
+	public String depositeMoney(CustomerDTO customerDTO);
+}

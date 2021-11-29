@@ -1,0 +1,21 @@
+package com.xoriant.bank.dao.util;
+
+public class CommonMethod {
+
+	public static String ADDRESSID;
+	public static String TRANSACTIONID;
+	
+	public static String getAddressId() {
+		String str="900";
+		int random=(int) (Math.random()*(1000-100+1)+100);
+		str=str+Integer.toString(random);
+		return str;
+	}
+	
+	public static String getTransactionId() {
+		String str="1000";
+		int random=(int) (Math.random()*(1000-100+1)-100);
+		str=str+Integer.toString(random);
+		return str;
+	}
+}

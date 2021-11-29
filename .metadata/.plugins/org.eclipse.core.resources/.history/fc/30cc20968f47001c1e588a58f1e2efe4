@@ -1,0 +1,9 @@
+package com.xoriant.bank.dao.util;
+
+public class DBquries {
+
+	public static final String EDIT_ADDRESS="update address set door_no=?,city=?,area=?,state=?,pincode=?,address_type=? where person_id=(select person_id from customer where customer_id=?)";
+    
+	public static final String FIND_ACCOUNT_DETAILS="select ac.account_number,ac.balance,ac.customer_id,ac.branch_id,ac.account_type,branch_name,ifsc_code,micr_code from account_details ac inner join customer c on ac.customer_id=c.customer_id inner join branch b on ac.branch_id=b.branch_id where account_number=?";
+
+}

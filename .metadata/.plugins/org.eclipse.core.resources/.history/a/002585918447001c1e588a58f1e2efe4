@@ -1,0 +1,22 @@
+package com.xoriant.bank.dao.util;
+
+public class UserDTO {
+
+	private int loginId;
+	
+	private String userName;
+	 
+	private String password;
+	
+	private String roleType;
+	
+	private String securityQuestion;
+	
+	private String securityAnswer;
+	
+	private int customerId;
+	
+	
+	
+	
+}

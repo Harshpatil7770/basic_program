@@ -1,0 +1,137 @@
+package com.xoriant.bank.dao.util;
+
+public class CustomerDTO {
+
+	private int accountNumber;
+	
+	private double balance;
+	
+	private int customerId;
+	
+	private int branchId;
+	
+	private String accountType;
+	
+	private String description;
+	
+	private int payeesAccountNumber;
+	
+	private String transactionType;
+	
+    private  String toDate;
+    
+    private String formDate;
+
+	public CustomerDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public CustomerDTO(int accountNumber, double balance, int customerId, int branchId, String accountType,
+			String description, int payeesAccountNumber, String transactionType, String toDate, String formDate) {
+		super();
+		this.accountNumber = accountNumber;
+		this.balance = balance;
+		this.customerId = customerId;
+		this.branchId = branchId;
+		this.accountType = accountType;
+		this.description = description;
+		this.payeesAccountNumber = payeesAccountNumber;
+		this.transactionType = transactionType;
+		this.toDate = toDate;
+		this.formDate = formDate;
+	}
+
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	public int getBranchId() {
+		return branchId;
+	}
+
+	public void setBranchId(int branchId) {
+		this.branchId = branchId;
+	}
+
+	public String getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public int getPayeesAccountNumber() {
+		return payeesAccountNumber;
+	}
+
+	public void setPayeesAccountNumber(int payeesAccountNumber) {
+		this.payeesAccountNumber = payeesAccountNumber;
+	}
+
+	public String getTransactionType() {
+		return transactionType;
+	}
+
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
+	}
+
+	public String getToDate() {
+		return toDate;
+	}
+
+	public void setToDate(String toDate) {
+		this.toDate = toDate;
+	}
+
+	public String getFormDate() {
+		return formDate;
+	}
+
+	public void setFormDate(String formDate) {
+		this.formDate = formDate;
+	}
+
+	@Override
+	public String toString() {
+		return "CustomerDTO [accountNumber=" + accountNumber + ", balance=" + balance + ", customerId=" + customerId
+				+ ", branchId=" + branchId + ", accountType=" + accountType + ", description=" + description
+				+ ", payeesAccountNumber=" + payeesAccountNumber + ", transactionType=" + transactionType + ", toDate="
+				+ toDate + ", formDate=" + formDate + "]";
+	}
+    
+    
+	
+	
+	
+}

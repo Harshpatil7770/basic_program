@@ -1,0 +1,96 @@
+package com.xoriant.bank.dao.util;
+
+public class UserDTO {
+	public String userName;
+	public String password;
+	public String oldPassword;
+	public String newPassword;
+	public int customerId;
+    public  String security_question;
+	
+	public  String security_answer;
+
+	public UserDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public UserDTO(int loginId, String userName, String password, String roleType, String securityQuestion,
+			String securityAnswer, int customerId) {
+		super();
+		this.loginId = loginId;
+		this.userName = userName;
+		this.password = password;
+		this.roleType = roleType;
+		this.securityQuestion = securityQuestion;
+		this.securityAnswer = securityAnswer;
+		this.customerId = customerId;
+	}
+
+	public int getLoginId() {
+		return loginId;
+	}
+
+	public void setLoginId(int loginId) {
+		this.loginId = loginId;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getRoleType() {
+		return roleType;
+	}
+
+	public void setRoleType(String roleType) {
+		this.roleType = roleType;
+	}
+
+	public String getSecurityQuestion() {
+		return securityQuestion;
+	}
+
+	public void setSecurityQuestion(String securityQuestion) {
+		this.securityQuestion = securityQuestion;
+	}
+
+	public String getSecurityAnswer() {
+		return securityAnswer;
+	}
+
+	public void setSecurityAnswer(String securityAnswer) {
+		this.securityAnswer = securityAnswer;
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	@Override
+	public String toString() {
+		return "UserDTO [loginId=" + loginId + ", userName=" + userName + ", password=" + password + ", roleType="
+				+ roleType + ", securityQuestion=" + securityQuestion + ", securityAnswer=" + securityAnswer
+				+ ", customerId=" + customerId + "]";
+	}
+	
+	
+	
+	
+}

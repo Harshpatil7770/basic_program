@@ -1,0 +1,74 @@
+package com.xoriant.bank.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.xoriant.bank.model.util.CommonMethod;
+import com.xoriant.bank.model.util.CustomerDTO;
+import com.xoriant.bank.model.util.DBquries;
+import com.xoriant.bank.model.util.DTO;
+import com.xoriant.bank.resource.MailSender;
+
+
+@Repository
+public class TransactionDaoImpl implements TransactionDao{
+
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	@Autowired
+	MailSender sender;
+	
+	public  String DETAILS_ARE_INVALIED="Details are Invalied";
+	
+	
+	@Override
+	public String withdrawMoney(CustomerDTO customerDTO) {
+		DTO dto=DTO.getData(customerDTO.getAccountNumber(),jdbcTemplate);
+		
+		int balance=(int) dto.getAmount();
+		int remainingAmount=0;
+		
+		if(balance>customerDTO.getAmount()) {
+		int result=jdbcTemplate.update(DBquries.WITHDRAWAL_MONEY,CommonMethod.getTransactionId(),
+				customerDTO.getAmount(),CommonMethod.getCurrentDate(),customerDTO.getAccountNumber(),
+				customerDTO.getDescription(),customerDTO.getPayeesAccountNumber(),customerDTO.getTransactionType(),
+				customerDTO.getAccountType());
+		
+		remainingAmount=(int) (balance-customerDTO.getAmount());
+		
+		int n=jdbcTemplate.update(DBquries.UPDATE_ACCOUNT_BALANCE,remainingAmount,customerDTO.getAccountNumber());
+		
+		if(n!=0) {
+			sender.sendWithdrawDetails(remainingAmount, balance);
+			String msg=customerDTO.getAmount()+"Amount Debited from your account, reamining balance is "+remainingAmount;
+			return msg;
+		}
+		}
+		
+		
+		return DETAILS_ARE_INVALIED;
+	}
+
+
+	@Override
+	public String depositeMoney(CustomerDTO customerDTO) {
+		DTO dto=DTO.getData(customerDTO.getAccountNumber(), jdbcTemplate);
+		
+		int balance=(int) dto.getAmount();
+		int remainingAmount=0;
+		
+		int result=jdbcTemplate.update(DBquries.DEPOSITE_MONEY,CommonMethod.getTransactionId(),customerDTO.getAmount(),
+				CommonMethod.getCurrentDate(),customerDTO.getAccountNumber(),customerDTO.getDescription(),
+				customerDTO.getPayeesAccountNumber(),customerDTO.getTransactionType(),customerDTO.getAccountType());
+		
+		remainingAmount=(int) (balance-customerDTO.getAmount());
+		
+		int n=jdbcTemplate.update(DBquries.UPDATE_ACCOUNT_BALANCE,balance);
+		String msg=customerDTO.getAmount()+"Amount deposited in your account,and new balance is"+remainingAmount;
+		
+		return DETAILS_ARE_INVALIED;
+	}
+
+}

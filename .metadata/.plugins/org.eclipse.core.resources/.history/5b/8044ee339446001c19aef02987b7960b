@@ -1,0 +1,6 @@
+package com.xoriant.bank.dao.util;
+
+public class DBquries {
+
+	public static final String CHANGE_PASSWORD="select user_name,password,security_question,security_answer from user_login_details u join customer c on u.customer_id=c.customer_id where customer_id=?";
+}

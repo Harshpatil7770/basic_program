@@ -1,0 +1,8 @@
+package com.xoriant.bank.service;
+
+import com.xoriant.bank.model.Address;
+
+public interface CustomerService {
+
+	public Address editAddress(Address address,int customerId);
+}

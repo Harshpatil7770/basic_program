@@ -1,0 +1,10 @@
+package com.xoriant.bank.service;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="transaction-service")
+public interface TransactionServiceProxy {
+	
+	public String withda
+
+}

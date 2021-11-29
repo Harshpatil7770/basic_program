@@ -1,0 +1,20 @@
+package com.xoriant.bank.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.xoriant.bank.dao.TransactionDao;
+
+@Service
+public class TransactionServiceImpl implements TransactionService{
+
+	@Autowired
+	TransactionDao transactionDao;
+	
+	@Override
+	public double withdrawMoney(int accountNumber) {
+		// TODO Auto-generated method stub
+		return transactionDao.withdrawMoney(accountNumber);
+	}
+
+}

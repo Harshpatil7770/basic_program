@@ -1,0 +1,89 @@
+package com.xoriant.bank.dao.util;
+
+public class UserDTO {
+
+	private String userName;
+	
+	private String password;
+	
+	private String securityQuestion;
+	
+	private String securityAnswer;
+	
+	private int managerId;
+	
+	private int customerId;
+
+	public UserDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public UserDTO(String userName, String password, String securityQuestion, String securityAnswer, int managerId,
+			int customerId) {
+		super();
+		this.userName = userName;
+		this.password = password;
+		this.securityQuestion = securityQuestion;
+		this.securityAnswer = securityAnswer;
+		this.managerId = managerId;
+		this.customerId = customerId;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getSecurityQuestion() {
+		return securityQuestion;
+	}
+
+	public void setSecurityQuestion(String securityQuestion) {
+		this.securityQuestion = securityQuestion;
+	}
+
+	public String getSecurityAnswer() {
+		return securityAnswer;
+	}
+
+	public void setSecurityAnswer(String securityAnswer) {
+		this.securityAnswer = securityAnswer;
+	}
+
+	public int getManagerId() {
+		return managerId;
+	}
+
+	public void setManagerId(int managerId) {
+		this.managerId = managerId;
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	@Override
+	public String toString() {
+		return "UserDTO [userName=" + userName + ", password=" + password + ", securityQuestion=" + securityQuestion
+				+ ", securityAnswer=" + securityAnswer + ", managerId=" + managerId + ", customerId=" + customerId
+				+ "]";
+	}
+	
+	
+}

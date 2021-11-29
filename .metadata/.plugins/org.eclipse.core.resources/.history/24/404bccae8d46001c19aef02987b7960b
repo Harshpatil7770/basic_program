@@ -1,0 +1,8 @@
+package com.xoriant.bank.service;
+
+import com.xoriant.bank.dao.util.UserDTO;
+import com.xoriant.bank.model.UserLoginDetails;
+
+public interface UserService {
+	public UserLoginDetails changePassword(UserDTO userDTO);
+}

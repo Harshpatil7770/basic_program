@@ -1,0 +1,6 @@
+package com.xoriant.bank.dao.util;
+
+public class DBquries {
+
+	public static final String EDIT_ADDRESS="update address set door_no=?,city=?,area=?,state=?,pincode=?,address_type=? where person_id=(select person_id from customer where customer_id=?)";
+}

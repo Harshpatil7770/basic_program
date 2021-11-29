@@ -1,0 +1,14 @@
+package com.xoriant.bank.dao.util;
+
+public class CommonMethod {
+
+	public static String BRANCHID;
+	
+	public static String getBranchId() {
+		String str="99";
+		int random=(int) (Math.random()*(1000-100+1)-100);
+		str=str+Integer.toString(random);
+		str=BRANCHID;
+		return BRANCHID;
+	}
+}

@@ -1,0 +1,15 @@
+package sorting;
+
+public class Bubble {
+
+	public static int[] getBubbleSortedArray(int a[]) {
+		return a;
+	}
+	public static void main(String args[]) {
+		int arr[]= {23,34,43,34,43,54,31,32,43,43};
+		int a[]=getBubbleSortedArray(arr);
+		for(int ele:a) {
+			System.out.println(ele);
+		}
+	}
+}

@@ -1,0 +1,32 @@
+package com.xoriant.bank.dao;
+
+import java.sql.ResultSet;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSet;
+import org.springframework.stereotype.Repository;
+
+import com.xoriant.bank.dao.util.CommonMethod;
+import com.xoriant.bank.dao.util.DBquries;
+import com.xoriant.bank.model.Branch;
+
+@Repository
+public class ManagerDaoImpl implements ManagerDao{
+
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+
+	@Override
+	public Branch addNewBranch(Branch branch) {
+		// TODO Auto-generated method stub
+		int newBranch= jdbcTemplate.update(DBquries.ADD_NEW_BRANCH,CommonMethod.getBranchId(),
+				branch.getBranchName(),branch.getIfscCode(),branch.getMicrCode());
+		if(newBranch!=0) {
+			
+		}
+		
+	}
+	
+	
+}

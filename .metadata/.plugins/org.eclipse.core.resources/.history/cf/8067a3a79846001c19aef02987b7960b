@@ -1,0 +1,33 @@
+package com.xoriant.bank.dao;
+
+
+
+import java.sql.ResultSet;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.xoriant.bank.dao.util.DBquries;
+import com.xoriant.bank.dao.util.UserDTO;
+import com.xoriant.bank.model.UserLoginDetails;
+
+
+@Repository
+public class UserDaoImpl implements UserDao{
+
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+	
+	public String changePassword(UserDTO userDTO) {
+	UserDTO dto=UserDTO.getUserDetails(userDTO.getCustomerId(),jdbcTemplate);
+	if(dto.getPassword().equals(userDTO.getOldPassword()))
+	{
+		int status=jdbcTemplate.update(DBquries.UPDATE_PASSWORD,userDTO.getNewPassword(),userDTO.getCustomerId());	
+	}
+	
+	
+		return "===========Password not matched==========";
+	}
+
+}

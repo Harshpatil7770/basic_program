@@ -1,0 +1,76 @@
+package com.xoriant.bank.model;
+
+public class AccountDetails {
+
+	private int accountNumber;
+	
+	private double balance;
+	
+	private int customerId;
+	
+	private Branch branch;
+	
+	private String accountType;
+
+	public AccountDetails() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public AccountDetails(int accountNumber, double balance, int customerId, int branchId, String accountType) {
+		super();
+		this.accountNumber = accountNumber;
+		this.balance = balance;
+		this.customerId = customerId;
+		this.branchId = branchId;
+		this.accountType = accountType;
+	}
+
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	public int getBranchId() {
+		return branchId;
+	}
+
+	public void setBranchId(int branchId) {
+		this.branchId = branchId;
+	}
+
+	public String getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	@Override
+	public String toString() {
+		return "AccountDetails [accountNumber=" + accountNumber + ", balance=" + balance + ", customerId=" + customerId
+				+ ", branchId=" + branchId + ", accountType=" + accountType + "]";
+	}
+	
+	
+}

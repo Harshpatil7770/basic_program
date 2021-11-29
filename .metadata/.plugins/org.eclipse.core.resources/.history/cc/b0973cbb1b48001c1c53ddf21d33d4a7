@@ -1,0 +1,41 @@
+package com.xoriant.bank.dao;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.xoriant.bank.dao.util.CommonMethod;
+import com.xoriant.bank.dao.util.DBquries;
+import com.xoriant.bank.model.Branch;
+import com.xoriant.bank.model.PersonInfo;
+
+@Repository
+public class ManagerDaoImpl implements ManagerDao{
+
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+
+	@Override
+	public Branch addNewBranch(Branch branch) {
+		// TODO Auto-generated method stub
+		int res= jdbcTemplate.update(DBquries.ADD_NEW_BRANCH,CommonMethod.getBranchId(),
+				branch.getBranchName(),branch.getIfscCode(),branch.getMicrCode(),branch.getManagerId());
+		if(res!=0) {
+			return branch;
+		}
+		return null;
+	}
+
+	@Override
+	public PersonInfo addNewPerson(PersonInfo personInfo) {
+		// TODO Auto-generated method stub
+		int res=jdbcTemplate.update(DBquries.ADD_NEW_PERSON,CommonMethod.getPersonId(),personInfo.getPersonName(),
+				personInfo.getDob(),personInfo.getPhoneNumber(),CommonMethod.getAddressId(),personInfo.getPersonType(),
+				personInfo.getRole(),personInfo.getGender());
+		if(res!=0) {
+			return personInfo;
+		}
+		return null;
+	}
+}

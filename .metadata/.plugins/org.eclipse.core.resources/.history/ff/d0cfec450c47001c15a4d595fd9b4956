@@ -1,0 +1,15 @@
+package com.xoriant.bank.service;
+
+import java.util.List;
+
+import com.xoriant.bank.model.TransactionDetails;
+import com.xoriant.bank.model.util.CustomerDTO;
+
+public interface TransactionService {
+
+	public String withdrawMoney(CustomerDTO customerDTO);
+	
+	public String depositeMoney(CustomerDTO customerDTO);
+	
+	public List<TransactionDetails> miniStatement(int accountNumber);
+}

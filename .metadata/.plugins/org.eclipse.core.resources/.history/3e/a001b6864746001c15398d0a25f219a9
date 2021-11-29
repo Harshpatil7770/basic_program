@@ -1,0 +1,7 @@
+package com.xoriant.bank.service;
+
+import com.xoriant.bank.model.UserLoginDetails;
+
+public interface UserService {
+	public UserLoginDetails changePassword();
+}

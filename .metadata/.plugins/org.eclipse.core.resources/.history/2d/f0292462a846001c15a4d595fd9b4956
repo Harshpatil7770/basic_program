@@ -1,0 +1,42 @@
+package com.xoriant.bank.dao;
+
+
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.autoconfigure.metrics.export.wavefront.WavefrontProperties.Sender;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.mail.MailSender;
+import org.springframework.stereotype.Repository;
+
+import com.xoriant.bank.dao.util.DBquries;
+import com.xoriant.bank.dao.util.UserDTO;
+
+
+
+@Repository
+public class UserDaoImpl implements UserDao{
+
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+	
+	@Autowired
+	public MailSender sender;
+	
+	public String changePassword(UserDTO userDTO) {
+	UserDTO dto=UserDTO.getUserDetails(userDTO.getCustomerId(),jdbcTemplate);
+	if(dto.getPassword().equals(userDTO.getOldPassword()))
+	{
+		int status=jdbcTemplate.update(DBquries.UPDATE_PASSWORD,userDTO.getNewPassword(),userDTO.getCustomerId());	
+		if(status!=0) {
+		sender.c
+		return 	"Password changed succesfully";
+		}
+	}
+	
+	
+		return "===========Password not matched==========";
+	}
+
+}

@@ -1,0 +1,26 @@
+package com.xoriant.bank.model;
+
+public class TransactionDetails {
+
+	private int transactionId;
+	
+	private  double amount;
+	
+	private  String transactionDate;
+	
+	private int accountNumber;
+	
+	private  String description;
+	
+	private  int payeesAccountNumber;
+	
+	private  String transactionType;
+	
+	private int accountType;
+	
+	private  String formDate;
+	
+	private  String toDate;
+	
+	
+}

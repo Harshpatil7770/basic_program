@@ -1,0 +1,20 @@
+package com.xoriant.bank.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.xoriant.bank.dao.ManagerDao;
+import com.xoriant.bank.model.Branch;
+
+@Service
+public class ManagerServiceImpl implements ManagerService {
+
+	@Autowired
+	ManagerDao managerDao;
+
+	@Override
+	public Branch addNewBranch(Branch branch) {
+		// TODO Auto-generated method stub
+		return managerDao.addNewBranch();
+	}
+}

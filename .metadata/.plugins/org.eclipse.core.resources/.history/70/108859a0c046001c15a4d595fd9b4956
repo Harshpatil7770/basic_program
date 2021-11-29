@@ -1,0 +1,6 @@
+package com.xoriant.bank.service;
+
+public interface TransactionService {
+
+	public double withdrawMoney(int accountNumber);
+}

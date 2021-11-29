@@ -1,0 +1,25 @@
+package com.xoriant.bank.dao.util;
+
+public class CustomerDTO {
+
+	private int accountNumber;
+	
+	private double balance;
+	
+	private int customerId;
+	
+	private int branchId;
+	
+	private String accountType;
+	
+	private String description;
+	
+	private int payeesAccountNumber;
+	
+	private String transactionType;
+	
+
+	
+	
+	
+}

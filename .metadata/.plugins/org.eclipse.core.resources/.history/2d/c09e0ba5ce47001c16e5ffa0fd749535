@@ -1,0 +1,8 @@
+package com.xoriant.bank.service;
+
+import com.xoriant.bank.model.Branch;
+
+public interface ManagerService {
+
+	public Branch addNewBranch(Branch branch);
+}

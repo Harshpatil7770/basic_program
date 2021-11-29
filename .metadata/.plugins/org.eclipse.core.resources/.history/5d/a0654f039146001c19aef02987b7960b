@@ -1,0 +1,131 @@
+package com.xoriant.bank.dao.util;
+
+import java.sql.ResultSet;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class UserDTO {
+
+	private String userName;
+	
+	private String oldPassword;
+	
+	private String securityQuestion;
+	
+	private String securityAnswer;
+	
+	private int managerId;
+	
+	private int customerId;
+
+	public UserDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	public String getUserName() {
+		return userName;
+	}
+
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
+
+	public String getOldPassword() {
+		return oldPassword;
+	}
+
+
+
+	public void setOldPassword(String oldPassword) {
+		this.oldPassword = oldPassword;
+	}
+
+
+
+	public String getSecurityQuestion() {
+		return securityQuestion;
+	}
+
+
+
+	public void setSecurityQuestion(String securityQuestion) {
+		this.securityQuestion = securityQuestion;
+	}
+
+
+
+	public String getSecurityAnswer() {
+		return securityAnswer;
+	}
+
+
+
+	public void setSecurityAnswer(String securityAnswer) {
+		this.securityAnswer = securityAnswer;
+	}
+
+
+
+	public int getManagerId() {
+		return managerId;
+	}
+
+
+
+	public void setManagerId(int managerId) {
+		this.managerId = managerId;
+	}
+
+
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+
+
+	public UserDTO(String userName, String oldPassword, String securityQuestion, String securityAnswer, int managerId,
+			int customerId) {
+		super();
+		this.userName = userName;
+		this.oldPassword = oldPassword;
+		this.securityQuestion = securityQuestion;
+		this.securityAnswer = securityAnswer;
+		this.managerId = managerId;
+		this.customerId = customerId;
+	}
+
+
+
+	public UserDTO getUserDetails(int custometId,JdbcTemplate jdbcTemplate) {
+		return jdbcTemplate.query(DBquries.CHANGE_PASSWORD,(ResultSet rs)->{
+			if(rs.next()) {
+				UserDTO user=new UserDTO();
+				user.setUserName(rs.getString("user_name"));
+				user.setOldPassword(rs.getString("password"));
+				user.setSecurityQuestion(rs.getString("security_question"));
+				user.setSecurityAnswer(rs.getString("sequrity_answer"));
+				
+				return user;
+				
+			}
+			return null;
+		},customerId);
+	
+	}
+	
+	
+}

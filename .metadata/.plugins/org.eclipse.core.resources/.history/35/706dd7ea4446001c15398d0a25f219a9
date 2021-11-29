@@ -1,0 +1,5 @@
+package com.xoriant.bank.service;
+
+public interface UserService {
+
+}
